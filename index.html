@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Descripción para buscadores -->
+    <meta
+      name="description"
+      content="Gestor de Gastos es una herramienta simple y eficiente para registrar tus ingresos y egresos, controlar tu presupuesto y tomar el control de tus finanzas personales."
+    />
+    <!-- Palabras clave para SEO -->
+    <meta
+      name="keywords"
+      content="gestor de gastos, control de gastos, finanzas personales, presupuesto mensual, ahorro, administración del dinero, gastos del hogar, control financiero, registro de gastos, planificación financiera, finanzas inteligentes, gastos personales, controlar deudas, ingresos y egresos, app de finanzas"
+    />
+    <!-- Autor del sitio -->
+    <meta name="author" content="Gestor de Gastos" />
+    <!-- Robots de indexado -->
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta
+      property="og:title"
+      content="Gestor de Gastos | Controlá tus finanzas fácilmente"
+    />
+    <meta
+      property="og:description"
+      content="Registrá tus gastos, organizá tus ingresos y ahorrá con una herramienta pensada para tu economía personal. Gratis, simple y efectiva."
+    />
+    <meta property="og:image" content="/assets/Logo - Gestor de Gastos"/>
+    <link
+    rel="shortcut icon"
+    href="./assets/Logo - Gestor de Gastos-circle.png"
+    />
+    <title>Control de Gastos</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Control de Gastos Mensuales</h1>
+    </header>
+    <div class="container">
+      <form id="gastoForm">
+        <label>Fecha: <input type="date" id="fecha" required /></label>
+        <label>Monto ($): <input type="number" id="monto" required /></label>
+        <label
+          >Estado de pago:
+          <select id="estado">
+            <option>Pagado</option>
+            <option>Pendiente</option>
+          </select>
+        </label>
+        <label
+          >Medio de pago:
+          <select id="medio">
+            <option>MercadoPago</option>
+            <option>Débito</option>
+            <option>Crédito</option>
+            <option>Efectivo</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label
+          >Tipo de compra:
+          <select id="tipo">
+            <option>Comida</option>
+            <option>Transporte</option>
+            <option>Servicios</option>
+            <option>Compras</option>
+            <option>Suscripción</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label>Descripción: <input type="text" id="descripcion" /></label>
+        <button type="submit">Agregar Gasto</button>
+      </form>
+      <div
+        style="
+          background: #d0e9ff;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+        "
+      >
+        <label
+          >Sueldo mensual ($):
+          <input type="number" id="sueldo" placeholder="Ingrese su saldo" />
+        </label>
+        <p>
+          <strong>Saldo disponible:</strong> $<span id="saldoDisponible"
+            >0.00</span
+          >
+        </p>
+      </div>
+
+      <h2>Gastos del mes</h2>
+      <table id="tablaGastos">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Monto ($)</th>
+            <th>Estado</th>
+            <th>Medio</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="summary">
+        <h2>Resumen Anual</h2>
+        <ul id="resumenAnual"></ul>
+        <button
+          id="resetResumen"
+          style="
+            margin-top: 1rem;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+          "
+        >
+          Reiniciar todo
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
